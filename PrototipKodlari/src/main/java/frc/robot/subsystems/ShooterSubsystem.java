@@ -17,6 +17,8 @@ public class ShooterSubsystem extends SubsystemBase {
    */
 
   Spark motor_shooter = new Spark(5);
+  Spark motor_shooter2 = new Spark(6);
+
 
   public ShooterSubsystem() {
 
@@ -29,10 +31,12 @@ public class ShooterSubsystem extends SubsystemBase {
   public void runShooter(double speed){
     if(!Constants.isShooter){
     motor_shooter.set(speed);
+    motor_shooter2.set(speed);
     Constants.isShooter = true;
     }
     else{
       motor_shooter.set(0);
+      motor_shooter2.set(0);
       Constants.isShooter = false;
     }
   }
